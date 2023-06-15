@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="icon" href="image/home.png" type="image/png" sizes="16x16">
+	<title>S-Bank</title>
+	<meta name="title" content="S-Bank_Associated with Sparks foundations.">
+	<meta name="description" content="This is a Digital Banking Website made by Satya">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+</head>
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-family: "Josefin Sans", sans-serif;
+	}
+
+	header {
+		width: 100%;
+		height: 100vh;
+		background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.15)),
+			url("image/index-home.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+
+	.Logo {
+		color: rgb(44, 44, 44);
+		font-size: 1.5em;
+	}
+
+	.nav {
+		display: flex;
+		align-items: center;
+	}
+
+	.nav ol {
+		display: flex;
+		list-style: none;
+	}
+
+	.nav ol li {
+		margin: 1em;
+	}
+
+	.nav ol li a {
+		text-decoration: none;
+		padding: 0.2em 1.2em 0.9em 1.2em;
+		border-radius: 10px 10px 0 0;
+		color: rgb(39, 39, 39);
+		transition: all .4s;
+		position: relative;
+		z-index: 1;
+	}
+
+	.nav ol li a::before {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 41px;
+		border-radius: 10px 10px 0 0;
+		background: #853333;
+		transform-origin: bottom;
+		background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+		transform: scaleY(0.05);
+		z-index: -1;
+		transition: all .4s;
+	}
+
+	.nav ol li a:hover::before {
+		transform: scaleY(1.1);
+	}
+
+	.nav ol li a:hover {
+		color: rgb(255, 255, 255);
+	}
+
+	.btn {
+		position: relative;
+		width: 25px;
+		height: 25px;
+		-webkit-appearance: none;
+		appearance: none;
+		cursor: pointer;
+		display: none;
+	}
+
+	.btn::before {
+		content: '\f0c9';
+		position: absolute;
+		top: 0;
+		left: 0;
+		font-family: 'Font Awesome 5 Free';
+		font-weight: 700;
+		font-size: 2em;
+	}
+
+
+
+	@media (max-width: 1200px) {
+		.btn {
+			display: flex;
+			z-index: 100;
+		}
+
+		header {
+			justify-content: space-between;
+			padding: 0 2em;
+		}
+
+		.nav {
+			width: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: flex;
+			justify-content: center;
+			background: #ffffff;
+			transform: translateY(-110%);
+			transition: all .4s;
+		}
+
+		input:checked~.nav {
+			transform: translateY(0%);
+		}
+
+		input:checked::before {
+			content: '\f00d';
+		}
+	}
+
+	@media (max-width: 700px) {
+		.nav ol {
+			flex-direction: column;
+			text-align: center;
+		}
+	}
+
+
+
+
+	nav {
+		width: 100%;
+		height: 15vh;
+		background: rgba(0, 0, 0, 0.2);
+		color: rgb(255, 255, 255);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		text-transform: uppercase;
+	}
+
+	nav .logo {
+		width: 25%;
+		text-align: center;
+		/*background: red;*/
+	}
+
+
+
+	main {
+		width: 100%;
+		height: 85vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		color: white;
+	}
+
+	section h3 {
+		font-size: 35px;
+		font-weight: 200;
+		letter-spacing: 3px;
+		text-shadow: 1px 1px 2px black;
+	}
+
+	section h1 {
+		margin: 30px 0 20px 0;
+		font-size: 55px;
+		font-weight: 700;
+		text-shadow: 2px 1px 5px black;
+		text-transform: uppercase;
+	}
+
+	section p {
+		font-size: 25px;
+		word-spacing: 2px;
+		margin-bottom: 25px;
+		text-shadow: 1px 1px 1px black;
+	}
+
+	section a {
+		padding: 12px 30px;
+		border-radius: 4px;
+		outline: none;
+		text-transform: uppercase;
+		font-size: 13px;
+		font-weight: 500;
+		text-decoration: none;
+		letter-spacing: 1px;
+		transition: all 0.5s ease;
+	}
+
+	section .btnone {
+		/*background: #00b894;*/
+		background: #fff;
+		color: #000;
+	}
+
+	.btnone:hover {
+		background: #00b894;
+		color: white;
+	}
+
+	section .btntwo {
+		background: #00b894;
+		color: white;
+	}
+
+	.btntwo:hover {
+		background: #fff;
+		color: #000;
+	}
+
+	.change_content:after {
+		content: "";
+		animation: changetext 10s infinite linear;
+		color: #0015b8;
+	}
+
+	@keyframes changetext {
+		0% {
+			content: "BALASORE";
+		}
+
+		20% {
+			content: "BHADRAK";
+		}
+
+		35% {
+			content: "BASUDEVPUR";
+		}
+
+		60% {
+			content: "BHUBANESWAR";
+		}
+
+		80% {
+			content: "CUTTACK";
+		}
+
+		100% {
+			content: "ANUGUL";
+		}
+	}
+</style>
+
+<body>
+
+	<header>
+
+		<nav>
+			<div class="logo">
+				<h1 style="font-size: 20px;">S-Bank </h1>
+			</div>
+
+			<input type="checkbox" name="" class="btn" />
+			<div class="nav">
+				<ol>
+					<li><a href="about.html">About</a></li>
+					<li><a href="customers.html">Customers</a></li>
+					<li><a href="about.html#section--2">Service</a></li>
+					<li><a href="about.html#contact">Contact</a></li>
+				</ol>
+			</div>
+		</nav>
+
+		<main>
+			<section>
+				<h3>Welcome To S-Bank</h3>
+				<h1>VISIT OUR BRANCH AT <span class="change_content"> </span> <span style="margin-top: -10px;"> |
+					</span> </h1>
+				<p>"Associated with @Sparks Foundation"</p>
+				<a href="subscribepage.html" class="btnone">Subscribe Here</a>
+				<a href="login-signuppage.html" class="btntwo">login HERE</a>
+
+			</section>
+
+		</main>
+
+
+	</header>
+
+
+
+</body>
+
+</html>

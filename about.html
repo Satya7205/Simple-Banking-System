@@ -1,0 +1,1802 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="image/about.png" type="image/png" sizes="20x20">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous" />
+  <title>S-Bank About</title>
+  <meta name="title" content="S-Bank_Associated with Sparks foundations.">
+  <meta name="description" content="This is a Digital Banking Website made by Satya">
+  <script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+    integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN"
+    crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
+    integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
+    crossorigin="anonymous"></script>
+</head>
+
+<!-- ------------------------------------------------------------------------------------------------
+CSS PART
+------------------------------------------------------------------------------------------------ -->
+
+<style>
+  :root {
+    --color-primary: #0f00e6;
+    --color-secondary: #ffcb03;
+    --color-tertiary: #ff585f;
+    --color-primary-darker: #52c8b0;
+    --color-secondary-darker: #ffbb00;
+    --color-tertiary-darker: #fd424b;
+    --color-primary-opacity: #5ec5763a;
+    --color-secondary-opacity: #ffcd0331;
+    --color-tertiary-opacity: #ff58602d;
+    --gradient-primary: linear-gradient(to top left, #d21616, #2f35ef);
+    --gradient-secondary: linear-gradient(to top left, #ffb003, #ffcb03);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
+
+  html {
+    font-size: 80%;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    color: #000000;
+    line-height: 1.9;
+    background-color: #ab9a9a;
+  }
+
+  /* GENERAL ELEMENTS */
+  .section {
+    padding: 15rem 3rem;
+    border-top: 1px solid #ddd;
+
+    transition: transform 1s, opacity 1s;
+  }
+
+  .section--hidden {
+    opacity: 0;
+    transform: translateY(8rem);
+  }
+
+  .section__title {
+    max-width: 80rem;
+    margin: 0 auto 8rem auto;
+  }
+
+  .section__description {
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+
+  .btn {
+    display: inline-block;
+    background-color: var(--color-primary);
+    font-size: 1.6rem;
+    font-family: inherit;
+    font-weight: 500;
+    border: none;
+    padding: 1.25rem 4.5rem;
+    border-radius: 10rem;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .btn:hover {
+    background-color: var(--color-primary-darker);
+  }
+
+  .btn--text {
+    display: inline-block;
+    background: none;
+    font-size: 1.7rem;
+    font-family: inherit;
+    font-weight: 500;
+    color: var(--color-primary);
+    border: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 2px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+
+
+  /* NAVIGATION */
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 9rem;
+    width: 100%;
+    padding: 0 6rem;
+    z-index: 100;
+  }
+
+  /* nav and stickly class at the same time */
+  .nav.sticky {
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+
+
+  .nav__links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+  }
+
+  .nav__item {
+    margin-left: 4rem;
+  }
+
+  .nav__link:link,
+  .nav__link:visited {
+    font-size: 1.7rem;
+    font-weight: 400;
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s;
+  }
+
+
+  /* HEADER */
+  .header {
+    padding: 0 3rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header__title {
+    flex: 1;
+
+    max-width: 115rem;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    row-gap: 3rem;
+    align-content: center;
+    justify-content: center;
+
+    align-items: start;
+    justify-items: start;
+  }
+
+  h1 {
+    font-size: 5.5rem;
+    line-height: 1.35;
+  }
+
+  h4 {
+    font-size: 2.4rem;
+    font-weight: 500;
+  }
+
+  .header__img {
+    width: 100%;
+    grid-column: 2 / 3;
+    grid-row: 1 / span 4;
+    transform: translateY(-6rem);
+  }
+
+  .highlight {
+    position: relative;
+  }
+
+  .highlight::after {
+    display: block;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.7;
+    transform: scale(1.07, 1.05) skewX(-15deg);
+    background-image: var(--gradient-primary);
+  }
+
+  /* FEATURES */
+  .features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin: 0 12rem;
+  }
+
+  .features__img {
+    width: 100%;
+  }
+
+  .features__feature {
+    align-self: center;
+    justify-self: center;
+    width: 70%;
+    font-size: 1.5rem;
+  }
+
+  .features__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-primary-opacity);
+    height: 5.5rem;
+    width: 5.5rem;
+    border-radius: 50%;
+    margin-bottom: 2rem;
+  }
+
+  .features__icon svg {
+    height: 2.5rem;
+    width: 2.5rem;
+    fill: var(--color-primary);
+  }
+
+  .features__header {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  /* OPERATIONS */
+
+  .btnone {
+    /*background: #00b894;*/
+    background: #fff;
+    color: #000;
+  }
+
+  .btnone:hover {
+    background: #a09ddd;
+    color: white;
+  }
+
+  .operations {
+    max-width: 100rem;
+    margin: 12rem auto 0 auto;
+
+    background-color: #fff;
+  }
+
+  .operations__tab-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .operations__tab {
+    margin-right: 2.5rem;
+    transform: translateY(-50%);
+  }
+
+  .operations__tab span {
+    margin-right: 1rem;
+    font-weight: 600;
+    display: inline-block;
+  }
+
+  .operations__tab--1 {
+    background-color: var(--color-secondary);
+  }
+
+  .operations__tab--1:hover {
+    background-color: var(--color-secondary-darker);
+  }
+
+  .operations__tab--3 {
+    background-color: var(--color-tertiary);
+    margin: 0;
+  }
+
+  .operations__tab--3:hover {
+    background-color: var(--color-tertiary-darker);
+  }
+
+  .operations__tab--active {
+    transform: translateY(-66%);
+  }
+
+  .operations__content {
+    display: none;
+
+    /* JUST PRESENTATIONAL */
+    font-size: 1.7rem;
+    padding: 2.5rem 7rem 6.5rem 7rem;
+  }
+
+  .operations__content--active {
+    display: grid;
+    grid-template-columns: 7rem 1fr;
+    column-gap: 3rem;
+    row-gap: 0.5rem;
+  }
+
+  .operations__header {
+    font-size: 2.25rem;
+    font-weight: 500;
+    align-self: center;
+  }
+
+  .operations__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+  }
+
+  .operations__icon svg {
+    height: 2.75rem;
+    width: 2.75rem;
+  }
+
+  .operations__content p {
+    grid-column: 2;
+  }
+
+  .operations__icon--1 {
+    background-color: var(--color-secondary-opacity);
+  }
+
+  .operations__icon--2 {
+    background-color: var(--color-primary-opacity);
+  }
+
+  .operations__icon--3 {
+    background-color: var(--color-tertiary-opacity);
+  }
+
+  .operations__icon--1 svg {
+    fill: var(--color-secondary-darker);
+  }
+
+  .operations__icon--2 svg {
+    fill: var(--color-primary);
+  }
+
+  .operations__icon--3 svg {
+    fill: var(--color-tertiary);
+  }
+
+  /* SLIDER */
+  .slider {
+    max-width: 100rem;
+    height: 50rem;
+    margin: 0 auto;
+    position: relative;
+
+    /* IN THE END */
+    overflow: hidden;
+  }
+
+  .slide {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* THIS creates the animation! */
+    transition: transform 1s;
+  }
+
+  .slide>img {
+    /* Only for images that have different size than slide */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .slider__btn {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+
+    border: none;
+    background: rgba(255, 255, 255, 0.7);
+    font-family: inherit;
+    color: #333;
+    border-radius: 50%;
+    height: 5.5rem;
+    width: 5.5rem;
+    font-size: 3.25rem;
+    cursor: pointer;
+  }
+
+  .slider__btn--left {
+    left: 6%;
+    transform: translate(-50%, -50%);
+  }
+
+  .slider__btn--right {
+    right: 6%;
+    transform: translate(50%, -50%);
+  }
+
+  .dots {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+  }
+
+  .dots__dot {
+    border: none;
+    background-color: #b9b9b9;
+    opacity: 0.7;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    margin-right: 1.75rem;
+    cursor: pointer;
+    transition: all 0.5s;
+
+    /* Only necessary when overlying images */
+    /* box-shadow: 0 0.6rem 1.5rem rgba(0, 0, 0, 0.7); */
+  }
+
+  .dots__dot:last-child {
+    margin: 0;
+  }
+
+  .dots__dot--active {
+    /* background-color: #fff; */
+    background-color: #888;
+    opacity: 1;
+  }
+
+  /* TESTIMONIALS */
+  .testimonial {
+    width: 65%;
+    position: relative;
+  }
+
+  .testimonial::before {
+    content: '\201C';
+    position: absolute;
+    top: -5.7rem;
+    left: -6.8rem;
+    line-height: 1;
+    font-size: 20rem;
+    font-family: inherit;
+    color: var(--color-primary);
+    z-index: -1;
+  }
+
+  .testimonial__header {
+    font-size: 2.25rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+
+  .testimonial__text {
+    font-size: 1.7rem;
+    margin-bottom: 3.5rem;
+    color: #666;
+  }
+
+  .testimonial__author {
+    margin-left: 3rem;
+    font-style: normal;
+
+    display: grid;
+    grid-template-columns: 6.5rem 1fr;
+    column-gap: 2rem;
+  }
+
+  .testimonial__photo {
+    grid-row: 1 / span 2;
+    width: 6.5rem;
+    border-radius: 50%;
+  }
+
+  .testimonial__name {
+    font-size: 1.7rem;
+    font-weight: 500;
+    align-self: end;
+    margin: 0;
+  }
+
+  .testimonial__location {
+    font-size: 1.5rem;
+  }
+
+  .section__title--testimonials {
+    margin-bottom: 4rem;
+  }
+
+
+  /* FOOTER */
+  .footer {
+    padding: 10rem 3rem;
+    background-color: #ab9a9a;
+  }
+
+
+  /* MODAL WINDOW */
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 60rem;
+    background-color: #f3f3f3;
+    padding: 5rem 6rem;
+    box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: all 0.5s;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 100;
+    transition: all 0.5s;
+  }
+
+  .modal__header {
+    font-size: 3.25rem;
+    margin-bottom: 4.5rem;
+    line-height: 1.5;
+  }
+
+  .modal__form {
+    margin: 0 3rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .modal__form label {
+    font-size: 1.7rem;
+    font-weight: 500;
+  }
+
+  .modal__form input {
+    font-size: 1.7rem;
+    padding: 1rem 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+  }
+
+  .modal__form button {
+    grid-column: 1 / span 2;
+    justify-self: center;
+    margin-top: 1rem;
+  }
+
+  .btn--close-modal {
+    font-family: inherit;
+    color: inherit;
+    position: absolute;
+    top: 0.5rem;
+    right: 2rem;
+    font-size: 4rem;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+
+  .hidden {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+
+  /* --------------------------------------------------------------
+#footer
+-------------------------------------------------------------- */
+  #footer {
+    background: #eeeeee;
+    padding: 0 0 30px 0;
+    color: #555555;
+    font-size: 14px;
+  }
+
+  #footer .footer-top {
+    background: #f6f6f6;
+    padding: 60px 0 30px 0;
+  }
+
+  #footer .footer-top .footer-info {
+    margin-bottom: 30px;
+  }
+
+  #footer .footer-top .footer-info h3 {
+    font-size: 24px;
+    margin: 0 0 20px 0;
+    padding: 2px 0 2px 0;
+    line-height: 1;
+    font-weight: 700;
+  }
+
+  #footer .footer-top .footer-info p {
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 0;
+    font-family: "Roboto", sans-serif;
+  }
+
+
+
+  #footer .footer-top h4 {
+    font-size: 16px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 12px;
+  }
+
+  #footer .footer-top .footer-links {
+    margin-bottom: 30px;
+  }
+
+  #footer .footer-top .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  #footer .footer-top .footer-links ul i {
+    padding-right: 2px;
+    color: #3f48c0;
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  #footer .footer-top .footer-links ul li {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+  }
+
+  #footer .footer-top .footer-links ul li:first-child {
+    padding-top: 0;
+  }
+
+  #footer .footer-top .footer-links ul a {
+    color: #555555;
+    transition: 0.3s;
+    display: inline-block;
+    line-height: 1;
+  }
+
+  #footer .footer-top .footer-links ul a:hover {
+    color: #0011f8;
+  }
+
+  #footer .footer-top .footer-newsletter form {
+    margin-top: 30px;
+    background: #fff;
+    padding: 6px 10px;
+    position: relative;
+    border: 1px solid #d5d5d5;
+    border-radius: 4px;
+  }
+
+  #footer .footer-top .footer-newsletter form input[type="email"] {
+    border: 0;
+    padding: 4px;
+    width: calc(100% - 110px);
+  }
+
+  #footer .footer-top .footer-newsletter form input[type="submit"] {
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    border: 0;
+    background: none;
+    font-size: 16px;
+    padding: 0 20px;
+    background: #1977cc;
+    color: #fff;
+    transition: 0.3s;
+    border-radius: 0 4px 4px 0;
+  }
+
+  #footer .footer-top .footer-newsletter form input[type="submit"]:hover {
+    background: #65c9cd;
+  }
+
+  #footer .copyright {
+    text-align: center;
+    padding-top: 30px;
+  }
+
+  #footer .credits {
+    padding-top: 10px;
+    text-align: center;
+    font-size: 13px;
+  }
+</style>
+
+<!-- 
+------------------------------------------------------------------------------------------------
+CSS PART
+------------------------------------------------------------------------------------------------ -->
+
+
+
+
+<body>
+  <header class="header">
+    <nav class="nav">
+
+      <ul class="nav__links">
+        <li class="nav__item">
+          <a class="nav__link" href="index.html">Home</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="#section--1">Features</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="#section--2">Operations</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="#section--3">Customers</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="#contact">Contacts</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="header__title">
+      <!-- <h1 onclick="alert('HTML alert')"> -->
+      <h1>
+        Welcome to
+        <!-- Green highlight effect -->
+        <span class="highlight">S-Bank</span>
+
+        <!-- <span class="highlight">minimalist</span> -->
+      </h1>
+      <h4>A simpler banking experience for a simpler life.</h4>
+      <button class="btn--text btn--scroll-to">Learn more &DownArrow;</button>
+      <img src="img/bank.jpg" class="header__img" alt="Minimalist bank items" />
+    </div>
+  </header>
+
+
+
+  <!-- ------------------------------------------------------------------------------------------------
+      FEATURES SESSION
+      _________________________________________________________________________________________________ -->
+
+  <section class="section" id="section--1">
+    <div class="section__title">
+      <h2 class="section__description">Features</h2>
+      <h3 class="section__header">
+        Everything you need in a modern bank and more.
+      </h3>
+    </div>
+
+    <div class="features">
+      <img src="img/digital-banking.webp" data-src="img/digital-banking.webp" alt="Computer"
+        class="features__img lazy-img" />
+      <div class="features__feature">
+        <div class="features__icon">
+          <?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 64 64">
+            <g id="algorithm">
+              <path
+                d="M53,54H32.351l-7.5-6H35a3,3,0,0,0,3-3V43a1,1,0,0,0-.529-.882l-15-8a1,1,0,0,0-.877-.032L14,37.461V37a1,1,0,0,0-1-1H9a1,1,0,0,0-1,1v1H3a1,1,0,0,0-1,1V53a1,1,0,0,0,1,1H8v1a1,1,0,0,0,1,1h4a.993.993,0,0,0,.986-.93l8.389,6.711A1,1,0,0,0,23,62H55a1,1,0,0,0,1-1V57A3,3,0,0,0,53,54ZM4,52V40H8V52Zm8,2H10V38h2Zm42,6H23.351L14,52.519V39.65l7.96-3.538L36,43.6V45a1,1,0,0,1-1,1H22a1,1,0,0,0-.625,1.781l10,8A1,1,0,0,0,32,56H53a1,1,0,0,1,1,1Z" />
+              <rect x="39" y="19" width="2" height="2" />
+              <rect x="43" y="19" width="2" height="2" />
+              <rect x="47" y="19" width="2" height="2" />
+              <path
+                d="M59.493,15.735l-1.724-.287a.971.971,0,0,1-.748-.591c-.057-.144-.116-.286-.177-.428a.974.974,0,0,1,.111-.947l1.016-1.421a2.992,2.992,0,0,0-.32-3.866L55.805,6.348a2.993,2.993,0,0,0-3.866-.319L50.518,7.045a.977.977,0,0,1-.947.112q-.212-.091-.428-.178a.968.968,0,0,1-.59-.749l-.288-1.723A2.991,2.991,0,0,0,45.306,2H42.694a2.991,2.991,0,0,0-2.959,2.506l-.288,1.725a.971.971,0,0,1-.591.749c-.143.057-.286.116-.427.177a.979.979,0,0,1-.947-.113L36.061,6.029a2.992,2.992,0,0,0-3.866.32l-.216.216L27.707,2.293A1,1,0,0,0,27,2H6A1,1,0,0,0,5,3V8.142a4,4,0,1,0,2,0V4H26.586l3.979,3.979-.216.216a2.991,2.991,0,0,0-.32,3.865l1.016,1.423a.973.973,0,0,1,.111.947q-.091.212-.177.427a.971.971,0,0,1-.748.591l-1.724.287A2.991,2.991,0,0,0,26,18.694V19H11a1,1,0,0,0-1,1v3.142a4,4,0,1,0,2,0V21H26v.306a2.991,2.991,0,0,0,2.507,2.959l1.724.287a.971.971,0,0,1,.748.591c.057.144.116.286.177.428a.974.974,0,0,1-.111.947l-1.016,1.421a2.992,2.992,0,0,0,.32,3.866L32.2,33.652a2.993,2.993,0,0,0,3.866.319l1.421-1.015a.977.977,0,0,1,.947-.113q.212.091.428.178a.968.968,0,0,1,.59.749l.288,1.723A2.991,2.991,0,0,0,42.694,38H43V49a1,1,0,0,0,1,1h9.142a4,4,0,1,0,0-2H45V38h.306a2.991,2.991,0,0,0,2.959-2.506l.288-1.725a.971.971,0,0,1,.591-.749c.143-.057.286-.116.427-.177a.972.972,0,0,1,.947.113l1.421,1.015a2.993,2.993,0,0,0,3.866-.32l1.846-1.846a2.991,2.991,0,0,0,.32-3.865l-1.016-1.423a.973.973,0,0,1-.111-.947q.092-.212.177-.427a.971.971,0,0,1,.748-.591l1.724-.287A2.991,2.991,0,0,0,62,21.306V18.694A2.991,2.991,0,0,0,59.493,15.735ZM8,12a2,2,0,1,1-2-2A2,2,0,0,1,8,12Zm5,15a2,2,0,1,1-2-2A2,2,0,0,1,13,27ZM57,47a2,2,0,1,1-2,2A2,2,0,0,1,57,47Zm3-25.694a1,1,0,0,1-.835.986l-1.725.288a2.983,2.983,0,0,0-2.281,1.83c-.049.124-.1.246-.151.366a2.984,2.984,0,0,0,.32,2.9L56.344,29.1a1,1,0,0,1-.107,1.288l-1.846,1.846a1,1,0,0,1-1.289.106L51.68,31.328a2.98,2.98,0,0,0-2.9-.32c-.12.053-.243.1-.366.151a2.98,2.98,0,0,0-1.83,2.28l-.288,1.726a1,1,0,0,1-.986.835H42.694a1,1,0,0,1-.986-.836L41.42,33.44a2.977,2.977,0,0,0-1.829-2.28c-.124-.049-.247-.1-.367-.152a2.916,2.916,0,0,0-1.16-.238,3,3,0,0,0-1.744.558L34.9,32.343a1,1,0,0,1-1.289-.106l-1.846-1.846a1,1,0,0,1-.107-1.289l1.016-1.422a2.981,2.981,0,0,0,.32-2.9c-.052-.122-.1-.244-.151-.368a2.983,2.983,0,0,0-2.281-1.83l-1.725-.288A1,1,0,0,1,28,21.306V18.694a1,1,0,0,1,.835-.986l1.725-.288a2.983,2.983,0,0,0,2.281-1.83c.049-.124.1-.246.151-.366a2.984,2.984,0,0,0-.32-2.9L31.656,10.9a1,1,0,0,1,.107-1.288l1.846-1.846A1,1,0,0,1,34.9,7.657L36.32,8.672a2.982,2.982,0,0,0,2.9.32c.12-.053.243-.1.366-.151a2.98,2.98,0,0,0,1.83-2.28l.288-1.726A1,1,0,0,1,42.694,4h2.612a1,1,0,0,1,.986.836L46.58,6.56a2.977,2.977,0,0,0,1.829,2.28c.124.049.247.1.367.152a2.985,2.985,0,0,0,2.9-.32L53.1,7.657a1,1,0,0,1,1.289.106l1.846,1.846a1,1,0,0,1,.107,1.289L55.328,12.32a2.981,2.981,0,0,0-.32,2.9c.052.122.1.244.151.368a2.983,2.983,0,0,0,2.281,1.83l1.725.288a1,1,0,0,1,.835.986Z" />
+              <path d="M44,11a9,9,0,1,0,9,9A9.01,9.01,0,0,0,44,11Zm0,16a7,7,0,1,1,7-7A7.008,7.008,0,0,1,44,27Z" />
+            </g>
+          </svg>
+
+        </div>
+        <h5 class="features__header">100% digital bank</h5>
+        <p>
+          Our Digital Banking features make it easy for you to bank on your terms.
+          Manage your accounts, track spending, create budgets,
+          and transfer money between family and friends.
+        </p>
+      </div>
+
+      <div class="features__feature">
+        <div class="features__icon">
+          <?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg id="Layer_1" data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: #2e79bd;
+                }
+
+                .cls-2 {
+                  fill: #2d3e50;
+                }
+              </style>
+            </defs>
+            <title>b</title>
+            <path class="cls-1"
+              d="M118.945,25.02378,94.6602,27.111a.63822.63822,0,0,0-.38324,1.10016l6.12605,5.77767-1.35983,1.38795-.90738.926-4.606,4.78165q-2.66223,2.80594-5.30318,5.62517-1.89191,2.02762-3.76253,4.07917-4.47829,4.90137-8.8422,9.91453c-1.44753,1.67638-2.88975,3.36073-4.31068,5.06373-.37784.45235-.75037.91-1.12556,1.365l-1.51938-.85416L44.96023,52.952,41.1764,50.826l-2.71146,2.95362-3.39266,3.696L8.36209,86.56995l5.6092,5.47084,28.90012-27.889h.00266L59.79213,75.15731l8.65062,5.62783,3.13721,2.04091.71844.46566,4.08182-3.57626q2.5066-2.19925,4.936-4.47032c1.62583-1.5114,3.22769-3.04142,4.82423-4.57677q4.78168-4.618,9.42229-9.36373c3.10794-3.15318,6.15734-6.36223,9.19876-9.57661l4.52621-4.85882.612-.66788,1.60036-1.74654,5.84915,5.51652a.63822.63822,0,0,0,1.07528-.43187L119.63707,25.692A.63819.63819,0,0,0,118.945,25.02378Z" />
+            <path class="cls-2"
+              d="M14.0931,124.06753a2.09074,2.09074,0,0,0,2.08768,2.0877H30.65223a2.09077,2.09077,0,0,0,2.0877-2.0877V81.84173L14.0931,99.83615Z" />
+            <path class="cls-2"
+              d="M39.95192,74.88121v49.18632a2.09074,2.09074,0,0,0,2.08768,2.0877H56.51105a2.09076,2.09076,0,0,0,2.08768-2.0877V81.17272L43.565,71.39382Z" />
+            <path class="cls-2"
+              d="M72.814,90.41072,65.81074,85.8629v38.20463a2.09074,2.09074,0,0,0,2.08768,2.0877H82.36987a2.09076,2.09076,0,0,0,2.08768-2.0877V80.10042c-1.3902,1.28819-2.84447,2.59775-4.32245,3.89543Z" />
+            <path class="cls-2"
+              d="M99.617,65.30158c-2.86583,2.918-5.48492,5.53-7.94743,7.9332v50.83275a2.09074,2.09074,0,0,0,2.08768,2.0877h14.47145a2.09076,2.09076,0,0,0,2.08768-2.0877V54.11823l-1.41867,1.52306C105.95833,58.74673,102.82206,62.05143,99.617,65.30158Z" />
+            <path class="cls-2"
+              d="M72.25548,39.621q-1.34492.98588-5.01058.98993a22.1044,22.1044,0,0,1-6.15064-.83982,31.45325,31.45325,0,0,1-5.01062-1.86225l-2.58035,6.90124a40.84986,40.84986,0,0,0,4.05311,1.65128,27.96852,27.96852,0,0,0,7.10815,1.351v7.14062h7.56254V47.6299a15.90172,15.90172,0,0,0,4.94974-1.558,10.96664,10.96664,0,0,0,3.27007-2.58035,9.2677,9.2677,0,0,0,1.80139-3.266,12.13766,12.13766,0,0,0,.5396-3.57033,10.73107,10.73107,0,0,0-.92909-4.617,10.59266,10.59266,0,0,0-2.58037-3.44859,18.25977,18.25977,0,0,0-3.89894-2.61282,44.11272,44.11272,0,0,0-4.89293-2.10565q-1.74054-.60254-2.96985-1.11168a13.189,13.189,0,0,1-2.06914-1.0508,3.62306,3.62306,0,0,1-1.22934-1.22932,3.27232,3.27232,0,0,1-.39353-1.65124,3.0231,3.0231,0,0,1,1.26177-2.51951,6.92631,6.92631,0,0,1,4.14238-.96156,24.34767,24.34767,0,0,1,5.48932.60046,27.7658,27.7658,0,0,1,4.58867,1.44029l1.86223-7.20148A24.07539,24.07539,0,0,0,77.59879,8.9854a34.19813,34.19813,0,0,0-5.3717-.90071V1.84477H64.66455V8.32814a15.06548,15.06548,0,0,0-4.56026,1.52952,9.86878,9.86878,0,0,0-4.8889,5.87883,12.70566,12.70566,0,0,0-.572,3.80969,9.21034,9.21034,0,0,0,3.39179,7.5017,15.757,15.757,0,0,0,3.42018,2.13q1.89269.87026,3.87055,1.59042c1.35915.48282,2.56008.92909,3.60276,1.351A15.53469,15.53469,0,0,1,71.509,33.40951a5.34412,5.34412,0,0,1,1.558,1.46872,3.43251,3.43251,0,0,1,.5396,1.95148A3.25988,3.25988,0,0,1,72.25548,39.621Z" />
+          </svg>
+        </div>
+        <h5 class="features__header">Watch your money grow</h5>
+        <p>
+          Why should only the finance nerds have all the fun and high returns?
+          All you have to do is invest your money and go do your thing,
+          while bankist takes care of the rest.
+        </p>
+      </div>
+      <img src="img/money-grow.jpeg" data-src="img/money-grow.jpeg" alt="Plant" class="features__img lazy-img" />
+
+      <img src="img/card.jpg" data-src="img/card.jpg" alt="Credit card" class="features__img lazy-img" />
+      <div class="features__feature">
+        <div class="features__icon">
+          <?xml version="1.0" encoding="UTF-8"?>
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="58px" height="40px"
+            viewBox="0 0 58 40" version="1.1">
+            <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+            <title>048 - Add Payment Card</title>
+            <desc>Created with Sketch.</desc>
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="048---Add-Payment-Card">
+                <path
+                  d="M41.52,36 L4,36 C1.790861,36 2.22044605e-16,34.209139 0,32 L0,4 C-2.22044605e-16,1.790861 1.790861,0 4,0 L50,0 C52.209139,0 54,1.790861 54,4 L54,23.52 L41.52,36 Z"
+                  id="Path" fill="#F29C1F" />
+                <rect id="Rectangle" fill="#464F5D" x="0" y="6" width="54" height="8" />
+                <path
+                  d="M7,25 L5,25 C4.44771525,25 4,24.5522847 4,24 C4,23.4477153 4.44771525,23 5,23 L7,23 C7.55228475,23 8,23.4477153 8,24 C8,24.5522847 7.55228475,25 7,25 Z"
+                  id="Path" fill="#F3D55B" />
+                <path
+                  d="M13,25 L11,25 C10.4477153,25 10,24.5522847 10,24 C10,23.4477153 10.4477153,23 11,23 L13,23 C13.5522847,23 14,23.4477153 14,24 C14,24.5522847 13.5522847,25 13,25 Z"
+                  id="Path" fill="#F3D55B" />
+                <path
+                  d="M19,25 L17,25 C16.4477153,25 16,24.5522847 16,24 C16,23.4477153 16.4477153,23 17,23 L19,23 C19.5522847,23 20,23.4477153 20,24 C20,24.5522847 19.5522847,25 19,25 Z"
+                  id="Path" fill="#F3D55B" />
+                <path
+                  d="M25,25 L23,25 C22.4477153,25 22,24.5522847 22,24 C22,23.4477153 22.4477153,23 23,23 L25,23 C25.5522847,23 26,23.4477153 26,24 C26,24.5522847 25.5522847,25 25,25 Z"
+                  id="Path" fill="#F3D55B" />
+                <path
+                  d="M58,31 C58.003238,35.1324722 55.1939289,38.7369928 51.1857912,39.7430592 C47.1776536,40.7491256 42.9990957,38.8986012 41.0503577,35.2544611 C39.1016197,31.610321 39.8827089,27.107579 42.9449534,24.3326924 C46.0071979,21.5578058 50.5648867,21.2227553 54,23.52 C56.4983677,25.1892918 57.9988932,27.9952745 58,31 Z"
+                  id="Path" fill="#24AE5F" />
+                <path
+                  d="M53,30 L50,30 L50,27 C50,26.4477153 49.5522847,26 49,26 C48.4477153,26 48,26.4477153 48,27 L48,30 L45,30 C44.4477153,30 44,30.4477153 44,31 C44,31.5522847 44.4477153,32 45,32 L48,32 L48,35 C48,35.5522847 48.4477153,36 49,36 C49.5522847,36 50,35.5522847 50,35 L50,32 L53,32 C53.5522847,32 54,31.5522847 54,31 C54,30.4477153 53.5522847,30 53,30 Z"
+                  id="Path" fill="#FFFFFF" />
+              </g>
+            </g>
+          </svg>
+
+        </div>
+        <h5 class="features__header">Free debit card included</h5>
+        <p>
+          Life is easier, smoother and better when you have a debit card that
+          gives you complete control. does it all. Here’s your gateway to smarter spends,
+          easier ways to safeguard your card and managing everything at the click of a button.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- ------------------------------------------------------------------------------------------------
+  OPERATIONS 
+  ------------------------------------------------------------------------------------------------ -->
+
+  <section class="section" id="section--2">
+    <div class="section__title">
+      <h2 class="section__description">Operations</h2>
+      <h3 class="section__header">
+        Everything as simple as possible, but no simpler.
+      </h3>
+    </div>
+
+    <div class="operations">
+      <div class="operations__tab-container">
+        <button class="
+              btn
+              operations__tab operations__tab--1 operations__tab--active
+            " data-tab="1">
+          <span>01</span>Instant Transfers
+        </button>
+        <button class="btn operations__tab operations__tab--2" data-tab="2">
+          <span>02</span>Instant Deposit
+        </button>
+        <button class="btn operations__tab operations__tab--3" data-tab="3">
+          <span>03</span>ATM Services
+        </button>
+      </div>
+      <div class="
+            operations__content
+            operations__content--1
+            operations__content--active
+          ">
+        <div class="operations__icon operations__icon--1">
+          <!-- ------------------------------------------------------------------------------------------------
+icon part 1
+------------------------------------------------------------------------------------------------ -->
+          <?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns="http://www.w3.org/2000/svg" width="146"
+            height="146" viewBox="0 0 146 146">
+            <title>001-business</title>
+            <rect x="0.5" y="0.5" width="145" height="145" fill="none" />
+            <path d="M33.12,117H58.85a0.72,0.72,0,0,1,.72.72v12.83H25.78V117.7A0.72,0.72,0,0,1,26.5,117h6.62Z"
+              fill="#a8cbeb" />
+            <path d="M73.84,117h28a0.72,0.72,0,0,1,.72.72v12.83H68.82V117.7a0.72,0.72,0,0,1,.72-0.72h4.3Z"
+              fill="#a8cbeb" />
+            <path
+              d="M104.7,78l-0.62.53c-0.26.22-.55,0.46-0.84,0.71h0L102.59,63.6a10.8,10.8,0,0,1,5.69-10l2.23-1.2a0.43,0.43,0,0,1,.68.33V58a13.43,13.43,0,0,0-.73,2.82Z"
+              fill="#fff" />
+            <path
+              d="M97.46,83.81l0.19,0.11,0.21-.18c1.51-1.27,3.62-3,5.37-4.46,0.29-.26.58-0.49,0.84-0.71L104.7,78l5.77-17.22a13.43,13.43,0,0,1,.73-2.82,15.34,15.34,0,0,1,5-7.3c2.18-1.56,6-2.92,7.12-1.67a1.66,1.66,0,0,1,.3,1.28q-3.08,13.7-6.17,27.42c-2.66,5-5.68,10.22-9.14,15.64-4.22,6.63-12.71,18-12.76,18L95.28,117H73.84l-0.3-5.73A71.66,71.66,0,0,1,74,96.44L74.34,94A12.22,12.22,0,0,1,78.84,86L96.55,71.9a0.15,0.15,0,0,1,.21,0,10.65,10.65,0,0,1,.89,11.56Z"
+              fill="#fff" />
+            <path
+              d="M25.8,63.6L25.17,79.26l-0.85-.7L23.7,78,17.94,60.81A14.53,14.53,0,0,0,17.21,58V52.75a0.43,0.43,0,0,1,.68-0.33l2.24,1.2A10.81,10.81,0,0,1,25.8,63.6Z"
+              fill="#fff" />
+            <path
+              d="M30.93,83.81l-0.18-.33a10.63,10.63,0,0,1,.9-11.56,0.14,0.14,0,0,1,.2,0L49.56,86A12.24,12.24,0,0,1,54.06,94l0.34,2.49a72.23,72.23,0,0,1,.46,14.82L54.55,117H33.12l-0.3-5.62S24.3,100,20.06,93.36c-3.46-5.42-6.48-10.66-9.13-15.64L4.76,50.3A1.66,1.66,0,0,1,5.06,49c1.07-1.25,4.94.11,7.13,1.67a15.4,15.4,0,0,1,5,7.3,14.53,14.53,0,0,1,.73,2.82L23.7,78l0.62,0.53,0.85,0.7,5.36,4.47,0.22,0.18Z"
+              fill="#fff" />
+            <path
+              d="M43.32,44.26a20.4,20.4,0,1,0,20.4-20.4A20.4,20.4,0,0,0,43.32,44.26Zm20.4,27.6a27.6,27.6,0,1,1,27.6-27.6A27.6,27.6,0,0,1,63.72,71.86Z"
+              fill="#fff" />
+            <circle cx="63.72" cy="44.26" r="19.6" fill="#ed9180" />
+            <path
+              d="M86.63,92.7l10.51-8.38,0.32-.52,0.18-.33a10.65,10.65,0,0,0-.89-11.56,0.15,0.15,0,0,0-.21,0L78.84,86A12.22,12.22,0,0,0,74.34,94L74,96.44a71.66,71.66,0,0,0-.46,14.82l0.3,5.73v0.18"
+              fill="none" stroke="#515f76" stroke-miterlimit="10" stroke-width="2.4" />
+            <path
+              d="M97.66,83.92l0.21-.18c1.51-1.27,3.62-3,5.37-4.46,0.29-.26.58-0.49,0.84-0.71L104.7,78l5.77-17.22a13.43,13.43,0,0,1,.73-2.82,15.34,15.34,0,0,1,5-7.3c2.18-1.56,6-2.92,7.12-1.67a1.66,1.66,0,0,1,.3,1.28q-3.08,13.7-6.17,27.42c-2.66,5-5.68,10.22-9.14,15.64-3.91,6.13-11.46,16.29-12.61,17.82a0.8,0.8,0,0,0-.16.44L95.28,117"
+              fill="none" stroke="#515f76" stroke-miterlimit="10" stroke-width="2.4" />
+            <path d="M103.22,79.26L102.59,63.6a10.8,10.8,0,0,1,5.69-10l2.23-1.2a0.43,0.43,0,0,1,.68.33V58" fill="none"
+              stroke="#515f76" stroke-miterlimit="10" stroke-width="2.4" />
+            <path
+              d="M41.76,92.7l-10.5-8.38-0.33-.52-0.18-.33a10.63,10.63,0,0,1,.9-11.56,0.14,0.14,0,0,1,.2,0L49.56,86A12.24,12.24,0,0,1,54.06,94l0.34,2.49a72.23,72.23,0,0,1,.46,14.82L54.55,117v0.18"
+              fill="none" stroke="#515f76" stroke-miterlimit="10" stroke-width="2.4" />
+            <path
+              d="M30.74,83.92l-0.22-.18-5.36-4.47-0.85-.7L23.7,78,17.94,60.81A14.53,14.53,0,0,0,17.21,58a15.4,15.4,0,0,0-5-7.3C10,49.14,6.13,47.78,5.06,49a1.66,1.66,0,0,0-.3,1.28l6.18,27.42c2.65,5,5.67,10.22,9.13,15.64,3.91,6.13,11.46,16.29,12.61,17.82a0.8,0.8,0,0,1,.16.44L33.12,117v0.18"
+              fill="none" stroke="#515f76" stroke-miterlimit="10" stroke-width="2.4" />
+            <path d="M25.17,79.26L25.8,63.6a10.81,10.81,0,0,0-5.68-10l-2.24-1.2a0.43,0.43,0,0,0-.68.33V58" fill="none"
+              stroke="#515f76" stroke-miterlimit="10" stroke-width="2.4" />
+            <circle cx="63.72" cy="44.26" r="27.6" fill="none" stroke="#515f76" stroke-miterlimit="10"
+              stroke-width="2.4" />
+            <path d="M63.92,43.86c2.87,0,5.2,2.06,5.2,4.6s-2.33,4.6-5.2,4.6-5.2-2.06-5.2-4.6" fill="none"
+              stroke="#515f76" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.4" />
+            <path d="M69.12,39.26c0-2.54-2.33-4.6-5.2-4.6H63.86c-2.83,0-5.14,2.07-5.14,4.6s2.34,4.6,5.2,4.6" fill="none"
+              stroke="#515f76" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.4" />
+            <polyline points="63.86 32.34 63.86 34.66 63.86 34.74" fill="none" stroke="#515f76" stroke-linecap="round"
+              stroke-miterlimit="10" stroke-width="2.4" />
+            <line x1="63.86" y1="53.14" x2="63.86" y2="55.54" fill="none" stroke="#515f76" stroke-linecap="round"
+              stroke-miterlimit="10" stroke-width="2.4" />
+            <line x1="123.32" y1="34.6" x2="126.52" y2="37.8" fill="none" stroke="#ed9180" stroke-linecap="round"
+              stroke-miterlimit="10" stroke-width="1.6" />
+            <line x1="126.52" y1="34.6" x2="123.32" y2="37.8" fill="none" stroke="#ed9180" stroke-linecap="round"
+              stroke-miterlimit="10" stroke-width="1.6" />
+            <circle cx="139.66" cy="41.8" r="2" fill="none" stroke="#b8b9ba" stroke-linecap="round"
+              stroke-miterlimit="10" stroke-width="1.6" />
+            <circle cx="132.26" cy="54.34" r="1.6" fill="#b8b9ba" />
+            <line x1="13" y1="113" x2="13" y2="120" fill="none" stroke="#b8b9ba" stroke-linecap="round"
+              stroke-miterlimit="10" stroke-width="2" />
+            <line x1="16" y1="117" x2="10" y2="117" fill="none" stroke="#b8b9ba" stroke-linecap="round"
+              stroke-miterlimit="10" stroke-width="2" />
+            <circle cx="38.52" cy="15.86" r="1.6" fill="#b8b9ba" />
+            <path
+              d="M29.4,26l2.33-1.22a0.08,0.08,0,0,1,.12.08L31.4,27.42l2,1.95-2.76.4-1.24,2.5-1.24-2.5-2.6-.38a0.08,0.08,0,0,1,0-.14l1.88-1.84-0.47-2.75Z"
+              fill="#a8cbeb" />
+            <circle cx="11.86" cy="102.74" r="1.6" fill="#b8b9ba" />
+            <path
+              d="M30.66,124.79a2.4,2.4,0,0,1,2.29-2.4l27.31-2.06V118.5a0.57,0.57,0,0,0-.57-0.57H27.3a0.55,0.55,0,0,0-.65.57v12.23h4v-5.94Z"
+              fill="#d2e1ef" />
+            <path d="M59.57,130.54V117.7a0.72,0.72,0,0,0-.72-0.72H26.5a0.72,0.72,0,0,0-.72.72v12.83" fill="none"
+              stroke="#515f76" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.4" />
+            <path
+              d="M73.35,124.79a2.4,2.4,0,0,1,2.29-2.4L103,120.34V118.5a0.57,0.57,0,0,0-.57-0.57H70a0.55,0.55,0,0,0-.65.57v12.23h4v-5.94Z"
+              fill="#d2e1ef" />
+            <path d="M68.82,130.54V117.7a0.72,0.72,0,0,1,.72-0.72h32.34a0.72,0.72,0,0,1,.72.72v12.83" fill="none"
+              stroke="#515f76" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.4" />
+          </svg>
+        </div>
+        <h5 class="operations__header">
+          Tranfser money to anyone, instantly! No fees, no BS.
+        </h5>
+        <p>
+          Do your banking in just single click
+          You can check your transaction easily by one click. </p>
+        <a href="customers.html" class="btnone">Click me</a>
+      </div>
+
+      <div class="operations__content operations__content--2">
+        <div class="operations__icon operations__icon--2">
+
+          <!-- ------------------------------------------------------------------------------------------------
+icon part 2 
+------------------------------------------------------------------------------------------------ -->
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px" y="0px" viewBox="0 0 511.999 511.999" style="enable-background:new 0 0 511.999 511.999;"
+            xml:space="preserve">
+            <g>
+              <path style="fill:#ADA7A4;" d="M77.494,308.902c-20.956,0-38.005-17.049-38.005-38.005c0-6.999-5.674-12.672-12.672-12.672
+		s-12.672,5.673-12.672,12.672c0,34.93,28.419,63.348,63.348,63.348h26.452v-25.343L77.494,308.902L77.494,308.902z" />
+              <path style="fill:#ADA7A4;" d="M481.521,274.688h-43.052c-10.052-25.393-28.036-47.853-51.571-65.401
+		c-0.399-51.083-6.4-82.887-20.735-82.887c-10.549,0-42.381,18.355-65.515,46.696c-12.314-2.117-25.076-3.239-38.158-3.239
+		c-102.171,0-184.997,67.925-184.997,151.714c0,44.775,23.657,85.014,61.273,112.784l-12.216,69.28l47.421,8.362l9.391-53.26
+		c23.991,9.325,50.814,14.548,79.127,14.548s55.136-5.225,79.127-14.548l9.391,53.26l47.421-8.362l-12.216-69.28
+		c23.868-17.621,42.107-40.263,52.256-65.899h43.052c9.02,0,16.331-7.312,16.331-16.331v-61.108
+		C497.853,282,490.541,274.688,481.521,274.688z" />
+            </g>
+            <path style="fill:#7A7674;" d="M484.09,296.729c-6.997,0-12.672,5.673-12.672,12.672s5.674,12.672,12.672,12.672h13.763v-25.343
+	H484.09z" />
+            <circle style="fill:#FFB14D;" cx="262.494" cy="55.122" r="55.122" />
+            <path style="fill:#3D3D3B;" d="M308.23,237.185c-1.272,0-2.564-0.193-3.84-0.598c-13.345-4.239-27.442-6.389-41.898-6.389
+	c-14.456,0-28.553,2.149-41.899,6.389c-6.672,2.12-13.794-1.571-15.914-8.24c-2.119-6.67,1.571-13.794,8.242-15.913
+	c15.831-5.028,32.509-7.578,49.572-7.578c17.064,0,33.741,2.55,49.57,7.578c6.67,2.119,10.36,9.243,8.24,15.913
+	C318.589,233.74,313.601,237.185,308.23,237.185z" />
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+          </svg>
+
+        </div>
+        <h5 class="operations__header">
+          Secure digital banking platform
+        </h5>
+        <p>
+          Enjoy flexibility and convenience for your day-to-day banking
+          needs with our easy-to-use and secure Online banking platform.
+        </p>
+        <a href="customers.html" class="btnone">Click me</a>
+      </div>
+      <div class="operations__content operations__content--3">
+        <div class="operations__icon operations__icon--3">
+          <!-- ------------------------------------------------------------------------------------------------
+icon part 3 
+------------------------------------------------------------------------------------------------ -->
+
+          <?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg width="64" height="64" viewBox="0 0 64 64"
+            fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M57 3H7C4.79086 3 3 4.79086 3 7V54C3 56.2091 4.79086 58 7 58H57C59.2091 58 61 56.2091 61 54V7C61 4.79086 59.2091 3 57 3Z"
+              fill="#F89C8D" />
+            <path
+              d="M61 48V54C61 55.0609 60.5786 56.0783 59.8284 56.8284C59.0783 57.5786 58.0609 58 57 58H7C5.93913 58 4.92172 57.5786 4.17157 56.8284C3.42143 56.0783 3 55.0609 3 54V7C3 5.93913 3.42143 4.92172 4.17157 4.17157C4.92172 3.42143 5.93913 3 7 3H23V32C23 36.2435 24.6857 40.3131 27.6863 43.3137C30.6869 46.3143 34.7565 48 39 48H61Z"
+              fill="#F8664F" />
+            <path d="M21 26H11V38H21V26Z" fill="#F9E109" />
+            <path d="M36 42H32V46H36V42Z" fill="#84D2F4" />
+            <path d="M44 42H40V46H44V42Z" fill="#84D2F4" />
+            <path d="M52 42H48V46H52V42Z" fill="#84D2F4" />
+            <path d="M36 50H32V54H36V50Z" fill="#57B7EB" />
+            <path d="M44 50H40V54H44V50Z" fill="#57B7EB" />
+            <path d="M52 50H48V54H52V50Z" fill="#57B7EB" />
+            <path d="M36 34H32V38H36V34Z" fill="#84D2F4" />
+            <path d="M44 34H40V38H44V34Z" fill="#84D2F4" />
+            <path d="M52 34H48V38H52V34Z" fill="#84D2F4" />
+            <path d="M52 45V46H48V42H49C49 42.7956 49.3161 43.5587 49.8787 44.1213C50.4413 44.6839 51.2044 45 52 45Z"
+              fill="#57B7EB" />
+            <path d="M52 37V38H48V34H49C49 34.7956 49.3161 35.5587 49.8787 36.1213C50.4413 36.6839 51.2044 37 52 37Z"
+              fill="#57B7EB" />
+            <path d="M44 45V46H40V42H41C41 42.7956 41.3161 43.5587 41.8787 44.1213C42.4413 44.6839 43.2044 45 44 45Z"
+              fill="#57B7EB" />
+            <path d="M44 37V38H40V34H41C41 34.7956 41.3161 35.5587 41.8787 36.1213C42.4413 36.6839 43.2044 37 44 37Z"
+              fill="#57B7EB" />
+            <path d="M36 45V46H32V42H33C33 42.7956 33.3161 43.5587 33.8787 44.1213C34.4413 44.6839 35.2044 45 36 45Z"
+              fill="#57B7EB" />
+            <path d="M52 53V54H48V50H49C49 50.7956 49.3161 51.5587 49.8787 52.1213C50.4413 52.6839 51.2044 53 52 53V53Z"
+              fill="#4891D3" />
+            <path d="M44 53V54H40V50H41C41 50.7956 41.3161 51.5587 41.8787 52.1213C42.4413 52.6839 43.2044 53 44 53V53Z"
+              fill="#4891D3" />
+            <path d="M36 53V54H32V50H33C33 50.7956 33.3161 51.5587 33.8787 52.1213C34.4413 52.6839 35.2044 53 36 53V53Z"
+              fill="#4891D3" />
+            <path d="M36 37V38H32V34H33C33 34.7956 33.3161 35.5587 33.8787 36.1213C34.4413 36.6839 35.2044 37 36 37Z"
+              fill="#57B7EB" />
+            <path d="M54 7H30V29H54V7Z" fill="#84D2F4" />
+            <path d="M27 43H7V47H27V43Z" fill="#AD4038" />
+            <path d="M23 61V43H11L11 61H23Z" fill="#84D2F4" />
+            <path
+              d="M23 55.94V61H11V43H15V47C14.9995 49.2135 15.8154 51.3494 17.2914 52.9989C18.7675 54.6484 20.8 55.6956 23 55.94Z"
+              fill="#57B7EB" />
+            <path d="M23 43V47C21.9391 47 20.9217 46.5786 20.1716 45.8284C19.4214 45.0783 19 44.0609 19 43H23Z"
+              fill="#F9E109" />
+            <path d="M15 43C15 44.0609 14.5786 45.0783 13.8284 45.8284C13.0783 46.5786 12.0609 47 11 47V43H15Z"
+              fill="#FCBC04" />
+            <path d="M23 57V61H19C19 59.9391 19.4214 58.9217 20.1716 58.1716C20.9217 57.4214 21.9391 57 23 57Z"
+              fill="#FCBC04" />
+            <path d="M15 61H11V57C12.0609 57 13.0783 57.4214 13.8284 58.1716C14.5786 58.9217 15 59.9391 15 61V61Z"
+              fill="#FCBC04" />
+            <path
+              d="M17 54C18.1046 54 19 53.1046 19 52C19 50.8954 18.1046 50 17 50C15.8954 50 15 50.8954 15 52C15 53.1046 15.8954 54 17 54Z"
+              fill="#F9E109" />
+            <path
+              d="M18.02 53.72C17.7117 53.9043 17.3591 54.0011 17 54C16.5904 54.0014 16.1904 53.8765 15.8543 53.6425C15.5181 53.4085 15.2622 53.0767 15.1212 52.6922C14.9803 52.3076 14.9612 51.889 15.0666 51.4932C15.1719 51.0974 15.3966 50.7436 15.71 50.48C16.2198 51.7237 17.0104 52.8326 18.02 53.72V53.72Z"
+              fill="#FCBC04" />
+            <path d="M26 7H18V11H26V7Z" fill="#84D2F4" />
+            <path d="M26 15H18V19H26V15Z" fill="#84D2F4" />
+            <path
+              d="M30 7V29H54V7H30ZM52 25H46C42.8174 25 39.7652 23.7357 37.5147 21.4853C35.2643 19.2348 34 16.1826 34 13V9H48C49.0609 9 50.0783 9.42143 50.8284 10.1716C51.5786 10.9217 52 11.9391 52 13V25Z"
+              fill="#57B7EB" />
+            <path d="M23 7H18V11H23V7Z" fill="#57B7EB" />
+            <path
+              d="M26 9V11H18V7H20C20.0016 7.52995 20.2128 8.03773 20.5875 8.41247C20.9623 8.7872 21.4701 8.99842 22 9H26Z"
+              fill="#57B7EB" />
+            <path d="M23 15H18V19H23V15Z" fill="#57B7EB" />
+            <path
+              d="M26 17V19H18V15H20C20.0016 15.5299 20.2128 16.0377 20.5875 16.4125C20.9623 16.7872 21.4701 16.9984 22 17H26Z"
+              fill="#57B7EB" />
+            <path
+              d="M23 9V11H18V7H20C20.0016 7.52995 20.2128 8.03773 20.5875 8.41247C20.9623 8.7872 21.4701 8.99842 22 9H23Z"
+              fill="#4891D3" />
+            <path
+              d="M23 17V19H18V15H20C20.0016 15.5299 20.2128 16.0377 20.5875 16.4125C20.9623 16.7872 21.4701 16.9984 22 17H23Z"
+              fill="#4891D3" />
+            <path
+              d="M21 35V38H11V26H14V29C14 30.5913 14.6321 32.1174 15.7574 33.2426C16.8826 34.3679 18.4087 35 20 35H21Z"
+              fill="#FCBC04" />
+            <path
+              d="M61 32C60.7348 32 60.4804 32.1054 60.2929 32.2929C60.1054 32.4804 60 32.7348 60 33V54C60 54.7956 59.6839 55.5587 59.1213 56.1213C58.5587 56.6839 57.7956 57 57 57H24V48H27C27.2652 48 27.5196 47.8946 27.7071 47.7071C27.8946 47.5196 28 47.2652 28 47V43C28 42.7348 27.8946 42.4804 27.7071 42.2929C27.5196 42.1054 27.2652 42 27 42H7C6.73478 42 6.48043 42.1054 6.29289 42.2929C6.10536 42.4804 6 42.7348 6 43V47C6 47.2652 6.10536 47.5196 6.29289 47.7071C6.48043 47.8946 6.73478 48 7 48C7.26522 48 7.51957 47.8946 7.70711 47.7071C7.89464 47.5196 8 47.2652 8 47V44H10V61C10 61.2652 10.1054 61.5196 10.2929 61.7071C10.4804 61.8946 10.7348 62 11 62H23C23.2652 62 23.5196 61.8946 23.7071 61.7071C23.8946 61.5196 24 61.2652 24 61V59H57C58.3256 58.9984 59.5964 58.4711 60.5338 57.5338C61.4711 56.5964 61.9984 55.3256 62 54V33C62 32.7348 61.8946 32.4804 61.7071 32.2929C61.5196 32.1054 61.2652 32 61 32V32ZM18.1 60H15.9C15.7021 59.04 15.2273 58.159 14.5341 57.4659C13.841 56.7727 12.96 56.2979 12 56.1V47.9C12.96 47.7021 13.841 47.2273 14.5341 46.5341C15.2273 45.841 15.7021 44.96 15.9 44H18.1C18.2979 44.96 18.7727 45.841 19.4659 46.5341C20.159 47.2273 21.04 47.7021 22 47.9V56.1C21.04 56.2979 20.159 56.7727 19.4659 57.4659C18.7727 58.159 18.2979 59.04 18.1 60ZM26 46H24V44H26V46ZM22 44V45.829C21.5786 45.6789 21.1958 45.4369 20.8795 45.1205C20.5631 44.8042 20.3211 44.4214 20.171 44H22ZM13.829 44C13.6789 44.4214 13.4369 44.8042 13.1205 45.1205C12.8042 45.4369 12.4214 45.6789 12 45.829V44H13.829ZM12 60V58.171C12.4214 58.3211 12.8042 58.5631 13.1205 58.8795C13.4369 59.1958 13.6789 59.5786 13.829 60H12ZM22 60H20.171C20.3211 59.5786 20.5631 59.1958 20.8795 58.8795C21.1958 58.5631 21.5786 58.3211 22 58.171V60Z"
+              fill="#39519D" />
+            <path
+              d="M57 2H7C5.6744 2.00159 4.40356 2.52888 3.46622 3.46622C2.52888 4.40356 2.00159 5.6744 2 7V22C2 22.2652 2.10536 22.5196 2.29289 22.7071C2.48043 22.8946 2.73478 23 3 23C3.26522 23 3.51957 22.8946 3.70711 22.7071C3.89464 22.5196 4 22.2652 4 22V7C4 6.20435 4.31607 5.44129 4.87868 4.87868C5.44129 4.31607 6.20435 4 7 4H57C57.7956 4 58.5587 4.31607 59.1213 4.87868C59.6839 5.44129 60 6.20435 60 7V29C60 29.2652 60.1054 29.5196 60.2929 29.7071C60.4804 29.8946 60.7348 30 61 30C61.2652 30 61.5196 29.8946 61.7071 29.7071C61.8946 29.5196 62 29.2652 62 29V7C61.9984 5.6744 61.4711 4.40356 60.5338 3.46622C59.5964 2.52888 58.3256 2.00159 57 2V2Z"
+              fill="#39519D" />
+            <path
+              d="M7 57C6.20435 57 5.44129 56.6839 4.87868 56.1213C4.31607 55.5587 4 54.7956 4 54V26C4 25.7348 3.89464 25.4804 3.70711 25.2929C3.51957 25.1054 3.26522 25 3 25C2.73478 25 2.48043 25.1054 2.29289 25.2929C2.10536 25.4804 2 25.7348 2 26V54C2.00159 55.3256 2.52888 56.5964 3.46622 57.5338C4.40356 58.4711 5.6744 58.9984 7 59C7.26522 59 7.51957 58.8946 7.70711 58.7071C7.89464 58.5196 8 58.2652 8 58C8 57.7348 7.89464 57.4804 7.70711 57.2929C7.51957 57.1054 7.26522 57 7 57Z"
+              fill="#39519D" />
+            <path
+              d="M8 25C7.73478 25 7.48043 25.1054 7.29289 25.2929C7.10536 25.4804 7 25.7348 7 26C7 26.2652 7.10536 26.5196 7.29289 26.7071C7.48043 26.8946 7.73478 27 8 27H10V38C10 38.2652 10.1054 38.5196 10.2929 38.7071C10.4804 38.8946 10.7348 39 11 39H21C21.2652 39 21.5196 38.8946 21.7071 38.7071C21.8946 38.5196 22 38.2652 22 38V27H24C24.2652 27 24.5196 26.8946 24.7071 26.7071C24.8946 26.5196 25 26.2652 25 26C25 25.7348 24.8946 25.4804 24.7071 25.2929C24.5196 25.1054 24.2652 25 24 25H8ZM12 27H16V37H12V27ZM20 37H18V27H20V37Z"
+              fill="#39519D" />
+            <path
+              d="M37 42C37 41.7348 36.8946 41.4804 36.7071 41.2929C36.5196 41.1054 36.2652 41 36 41H32C31.7348 41 31.4804 41.1054 31.2929 41.2929C31.1054 41.4804 31 41.7348 31 42V46C31 46.2652 31.1054 46.5196 31.2929 46.7071C31.4804 46.8946 31.7348 47 32 47H36C36.2652 47 36.5196 46.8946 36.7071 46.7071C36.8946 46.5196 37 46.2652 37 46V42ZM35 45H33V43H35V45Z"
+              fill="#39519D" />
+            <path
+              d="M45 42C45 41.7348 44.8946 41.4804 44.7071 41.2929C44.5196 41.1054 44.2652 41 44 41H40C39.7348 41 39.4804 41.1054 39.2929 41.2929C39.1054 41.4804 39 41.7348 39 42V46C39 46.2652 39.1054 46.5196 39.2929 46.7071C39.4804 46.8946 39.7348 47 40 47H44C44.2652 47 44.5196 46.8946 44.7071 46.7071C44.8946 46.5196 45 46.2652 45 46V42ZM43 45H41V43H43V45Z"
+              fill="#39519D" />
+            <path
+              d="M53 42C53 41.7348 52.8946 41.4804 52.7071 41.2929C52.5196 41.1054 52.2652 41 52 41H48C47.7348 41 47.4804 41.1054 47.2929 41.2929C47.1054 41.4804 47 41.7348 47 42V46C47 46.2652 47.1054 46.5196 47.2929 46.7071C47.4804 46.8946 47.7348 47 48 47H52C52.2652 47 52.5196 46.8946 52.7071 46.7071C52.8946 46.5196 53 46.2652 53 46V42ZM51 45H49V43H51V45Z"
+              fill="#39519D" />
+            <path
+              d="M36 49H32C31.7348 49 31.4804 49.1054 31.2929 49.2929C31.1054 49.4804 31 49.7348 31 50V54C31 54.2652 31.1054 54.5196 31.2929 54.7071C31.4804 54.8946 31.7348 55 32 55H36C36.2652 55 36.5196 54.8946 36.7071 54.7071C36.8946 54.5196 37 54.2652 37 54V50C37 49.7348 36.8946 49.4804 36.7071 49.2929C36.5196 49.1054 36.2652 49 36 49ZM35 53H33V51H35V53Z"
+              fill="#39519D" />
+            <path
+              d="M44 51C44.2652 51 44.5196 50.8946 44.7071 50.7071C44.8946 50.5196 45 50.2652 45 50C45 49.7348 44.8946 49.4804 44.7071 49.2929C44.5196 49.1054 44.2652 49 44 49H40C39.7348 49 39.4804 49.1054 39.2929 49.2929C39.1054 49.4804 39 49.7348 39 50V54C39 54.2652 39.1054 54.5196 39.2929 54.7071C39.4804 54.8946 39.7348 55 40 55H44C44.2652 55 44.5196 54.8946 44.7071 54.7071C44.8946 54.5196 45 54.2652 45 54C45 53.7348 44.8946 53.4804 44.7071 53.2929C44.5196 53.1054 44.2652 53 44 53H41V51H44Z"
+              fill="#39519D" />
+            <path
+              d="M52 49H48C47.7348 49 47.4804 49.1054 47.2929 49.2929C47.1054 49.4804 47 49.7348 47 50V54C47 54.2652 47.1054 54.5196 47.2929 54.7071C47.4804 54.8946 47.7348 55 48 55H52C52.2652 55 52.5196 54.8946 52.7071 54.7071C52.8946 54.5196 53 54.2652 53 54V50C53 49.7348 52.8946 49.4804 52.7071 49.2929C52.5196 49.1054 52.2652 49 52 49ZM51 53H49V51H51V53Z"
+              fill="#39519D" />
+            <path
+              d="M37 34C37 33.7348 36.8946 33.4804 36.7071 33.2929C36.5196 33.1054 36.2652 33 36 33H32C31.7348 33 31.4804 33.1054 31.2929 33.2929C31.1054 33.4804 31 33.7348 31 34V38C31 38.2652 31.1054 38.5196 31.2929 38.7071C31.4804 38.8946 31.7348 39 32 39H36C36.2652 39 36.5196 38.8946 36.7071 38.7071C36.8946 38.5196 37 38.2652 37 38V34ZM35 37H33V35H35V37Z"
+              fill="#39519D" />
+            <path
+              d="M45 34C45 33.7348 44.8946 33.4804 44.7071 33.2929C44.5196 33.1054 44.2652 33 44 33H40C39.7348 33 39.4804 33.1054 39.2929 33.2929C39.1054 33.4804 39 33.7348 39 34V38C39 38.2652 39.1054 38.5196 39.2929 38.7071C39.4804 38.8946 39.7348 39 40 39H44C44.2652 39 44.5196 38.8946 44.7071 38.7071C44.8946 38.5196 45 38.2652 45 38V34ZM43 37H41V35H43V37Z"
+              fill="#39519D" />
+            <path
+              d="M53 34C53 33.7348 52.8946 33.4804 52.7071 33.2929C52.5196 33.1054 52.2652 33 52 33H48C47.7348 33 47.4804 33.1054 47.2929 33.2929C47.1054 33.4804 47 33.7348 47 34V38C47 38.2652 47.1054 38.5196 47.2929 38.7071C47.4804 38.8946 47.7348 39 48 39H52C52.2652 39 52.5196 38.8946 52.7071 38.7071C52.8946 38.5196 53 38.2652 53 38V34ZM51 37H49V35H51V37Z"
+              fill="#39519D" />
+            <path
+              d="M30 14C29.7348 14 29.4804 14.1054 29.2929 14.2929C29.1054 14.4804 29 14.7348 29 15V29C29 29.2652 29.1054 29.5196 29.2929 29.7071C29.4804 29.8946 29.7348 30 30 30H54C54.2652 30 54.5196 29.8946 54.7071 29.7071C54.8946 29.5196 55 29.2652 55 29V7C55 6.73478 54.8946 6.48043 54.7071 6.29289C54.5196 6.10536 54.2652 6 54 6H30C29.7348 6 29.4804 6.10536 29.2929 6.29289C29.1054 6.48043 29 6.73478 29 7V11C29 11.2652 29.1054 11.5196 29.2929 11.7071C29.4804 11.8946 29.7348 12 30 12C30.2652 12 30.5196 11.8946 30.7071 11.7071C30.8946 11.5196 31 11.2652 31 11V8H53V28H31V15C31 14.7348 30.8946 14.4804 30.7071 14.2929C30.5196 14.1054 30.2652 14 30 14Z"
+              fill="#39519D" />
+            <path
+              d="M17 49C16.4067 49 15.8266 49.1759 15.3333 49.5056C14.8399 49.8352 14.4554 50.3038 14.2284 50.852C14.0013 51.4001 13.9419 52.0033 14.0576 52.5853C14.1734 53.1672 14.4591 53.7018 14.8787 54.1213C15.2982 54.5409 15.8328 54.8266 16.4147 54.9424C16.9967 55.0581 17.5999 54.9987 18.1481 54.7716C18.6962 54.5446 19.1648 54.1601 19.4944 53.6667C19.8241 53.1734 20 52.5933 20 52C20 51.2044 19.6839 50.4413 19.1213 49.8787C18.5587 49.3161 17.7957 49 17 49ZM17 53C16.8022 53 16.6089 52.9414 16.4444 52.8315C16.28 52.7216 16.1518 52.5654 16.0761 52.3827C16.0004 52.2 15.9806 51.9989 16.0192 51.8049C16.0578 51.6109 16.153 51.4327 16.2929 51.2929C16.4327 51.153 16.6109 51.0578 16.8049 51.0192C16.9989 50.9806 17.2 51.0004 17.3827 51.0761C17.5654 51.1518 17.7216 51.28 17.8315 51.4444C17.9414 51.6089 18 51.8022 18 52C18 52.2652 17.8946 52.5196 17.7071 52.7071C17.5196 52.8946 17.2652 53 17 53Z"
+              fill="#39519D" />
+            <path
+              d="M18 12H26C26.2652 12 26.5196 11.8946 26.7071 11.7071C26.8946 11.5196 27 11.2652 27 11V7C27 6.73478 26.8946 6.48043 26.7071 6.29289C26.5196 6.10536 26.2652 6 26 6H18C17.7348 6 17.4804 6.10536 17.2929 6.29289C17.1054 6.48043 17 6.73478 17 7V11C17 11.2652 17.1054 11.5196 17.2929 11.7071C17.4804 11.8946 17.7348 12 18 12ZM19 8H25V10H19V8Z"
+              fill="#39519D" />
+            <path
+              d="M17 19C17 19.2652 17.1054 19.5196 17.2929 19.7071C17.4804 19.8946 17.7348 20 18 20H26C26.2652 20 26.5196 19.8946 26.7071 19.7071C26.8946 19.5196 27 19.2652 27 19V15C27 14.7348 26.8946 14.4804 26.7071 14.2929C26.5196 14.1054 26.2652 14 26 14H18C17.7348 14 17.4804 14.1054 17.2929 14.2929C17.1054 14.4804 17 14.7348 17 15V19ZM19 16H25V18H19V16Z"
+              fill="#39519D" />
+            <path
+              d="M42 23C41.4696 23 40.9609 22.7893 40.5858 22.4142C40.2107 22.0391 40 21.5304 40 21C40 20.7348 39.8946 20.4804 39.7071 20.2929C39.5196 20.1054 39.2652 20 39 20C38.7348 20 38.4804 20.1054 38.2929 20.2929C38.1054 20.4804 38 20.7348 38 21C38.0033 21.8842 38.2995 22.7424 38.8423 23.4404C39.3851 24.1385 40.1439 24.637 41 24.858V26C41 26.2652 41.1054 26.5196 41.2929 26.7071C41.4804 26.8946 41.7348 27 42 27C42.2652 27 42.5196 26.8946 42.7071 26.7071C42.8946 26.5196 43 26.2652 43 26V24.858C43.9416 24.6156 44.7624 24.038 45.3084 23.2334C45.8543 22.4288 46.0878 21.4526 45.965 20.488C45.8423 19.5235 45.3717 18.6369 44.6417 17.9947C43.9117 17.3525 42.9723 16.9988 42 17C41.6044 17 41.2178 16.8827 40.8889 16.6629C40.56 16.4432 40.3036 16.1308 40.1522 15.7654C40.0009 15.3999 39.9613 14.9978 40.0384 14.6098C40.1156 14.2219 40.3061 13.8655 40.5858 13.5858C40.8655 13.3061 41.2219 13.1156 41.6098 13.0384C41.9978 12.9613 42.3999 13.0009 42.7654 13.1522C43.1308 13.3036 43.4432 13.56 43.6629 13.8889C43.8827 14.2178 44 14.6044 44 15C44 15.2652 44.1054 15.5196 44.2929 15.7071C44.4804 15.8946 44.7348 16 45 16C45.2652 16 45.5196 15.8946 45.7071 15.7071C45.8946 15.5196 46 15.2652 46 15C45.9967 14.1158 45.7005 13.2576 45.1577 12.5596C44.6149 11.8615 43.8561 11.363 43 11.142V10C43 9.73478 42.8946 9.48043 42.7071 9.29289C42.5196 9.10536 42.2652 9 42 9C41.7348 9 41.4804 9.10536 41.2929 9.29289C41.1054 9.48043 41 9.73478 41 10V11.142C40.0584 11.3844 39.2376 11.962 38.6916 12.7666C38.1457 13.5712 37.9122 14.5474 38.035 15.512C38.1577 16.4765 38.6283 17.3631 39.3583 18.0053C40.0883 18.6475 41.0277 19.0012 42 19C42.5304 19 43.0391 19.2107 43.4142 19.5858C43.7893 19.9609 44 20.4696 44 21C44 21.5304 43.7893 22.0391 43.4142 22.4142C43.0391 22.7893 42.5304 23 42 23Z"
+              fill="#39519D" />
+          </svg>
+
+          <!-- -----------------------------------------------------------
+               
+ OPERATION ICON END
+ ---------------------------------------------------------- -->
+
+        </div>
+        <h5 class="operations__header">
+          Atm Services
+        </h5>
+        <p>
+          An ATM service provider offers comprehensive solutions for managing and maintaining automated teller machines.
+          They ensure seamless cash management, ATM network monitoring, software updates, and maintenance services.
+          Their expertise lies in providing secure and reliable ATM operations to banks, financial institutions, and
+          businesses, ensuring optimal customer experiences and efficient cash handling.
+        </p>
+        <a href="atmservice.html" class="btnone">Click me</a>
+      </div>
+    </div>
+
+    <br />
+
+  </section>
+  <!-- -----------------------------------------------------------
+               
+ CUSTOMER START
+  ---------------------------------------------------------- -->
+  <section class="section" id="section--3">
+    <div class="section__title section__title--testimonials">
+      <h2 class="section__description">Customers</h2>
+      <h3 class="section__header">
+        Millions of Bankists are already making their lifes simpler.
+      </h3>
+    </div>
+
+    <div class="slider">
+      <div class="slide">
+        <div class="testimonial">
+          <h5 class="testimonial__header">Ratan Tata: Respected Indian Business Icon and Philanthropist</h5>
+          <blockquote class="testimonial__text">
+            "Indian business magnate and former chairman of Tata Sons, overseeing various industries including banking
+            and financial services.."
+          </blockquote>
+          <address class="testimonial__author">
+            <img src="img/RatanNTata.jpg" alt="" class="testimonial__photo" />
+            <h6 class="testimonial__name">Ratan Tata</h6>
+            <p class="testimonial__location">Chairperson of Jaguar Land Rover,India
+            </p>
+          </address>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="testimonial">
+          <h5 class="testimonial__header">
+            Gautam Adani: Indian Business Magnate and Infrastructure Tycoon
+          </h5>
+          <blockquote class="testimonial__text">
+            " Indian business tycoon and chairman of Adani Group, expanding his influence in various sectors including
+            banking and financial services."
+          </blockquote>
+          <address class="testimonial__author">
+            <img src="img/goutam-adani.jpeg" alt="" class="testimonial__photo" />
+            <h6 class="testimonial__name">Goutam Adani</h6>
+            <p class="testimonial__location">Chairperson of Adani Group,India</p>
+          </address>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="testimonial">
+          <h5 class="testimonial__header">
+            Mukesh Ambani: Indian Business Tycoon and Chairman of Reliance Industries
+          </h5>
+          <blockquote class="testimonial__text">
+            "Indian business tycoon and chairman of Adani Group, expanding his influence in various sectors including
+            banking and financial services."
+          </blockquote>
+          <address class="testimonial__author">
+            <img src="img/mukesh-ambani.jpeg" alt="" class="testimonial__photo" />
+            <h6 class="testimonial__name">Mukesh Ambani</h6>
+            <p class="testimonial__location">Indian businessman
+              ,India </p>
+          </address>
+        </div>
+      </div>
+
+      <button class="slider__btn slider__btn--left">&larr;</button>
+      <button class="slider__btn slider__btn--right">&rarr;</button>
+      <div class="dots"></div>
+    </div>
+  </section>
+
+
+
+  <footer class="footer">
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <section class="section" id="section--3">
+          <div class="section__title section__title--testimonials">
+            <h2 class="section__description">Contact</h2>
+            <h5 class="section__header">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla dolore sint, fugiat perferendis nam magnam
+              porro quod odio minima consequatur, facere totam vitae doloribus quae, culpa voluptatum inventore iure
+              assumenda.
+            </h5>
+          </div>
+
+          <!--Google map-->
+          <div class="mapouter">
+            <div class="gmap_canvas"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no"
+                marginheight="0" marginwidth="0"
+                src="https://maps.google.com/maps?width=670&amp;height=363&amp;hl=en&amp;q=Balasore&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a
+                href="https://www.fnfgo.com/"></a></div>
+            <style>
+              .mapouter {
+                position: relative;
+                text-align: right;
+                width: 100%;
+                height: 363px;
+              }
+
+              .gmap_canvas {
+                overflow: hidden;
+                background: none !important;
+                width: 100%;
+                height: 363px;
+              }
+
+              .gmap_iframe {
+                height: 363px !important;
+              }
+            </style>
+          </div>
+
+          <div class="container">
+            <div class="row mt-5">
+
+              <div class="col-lg-4">
+                <div class="info">
+                  <div class="address">
+                    <i class="bi bi-geo-alt"></i>
+                    <h4>Location:</h4>
+                    <p>S-Bank Head office,Balasore,Odisha</p>
+                  </div>
+
+                  <div class="email">
+                    <i class="bi bi-envelope"></i>
+                    <h4>Email:</h4>
+                    <p>S-Bank@gmail.com</p>
+                  </div>
+
+                  <div class="phone">
+                    <i class="bi bi-phone"></i>
+                    <h4>Call:</h4>
+                    <p>+1 55234 5112 33s</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-8 mt-5 mt-lg-0">
+                <form action="" role="form" class="php-email-form">
+                  <div class="row">
+                    <div class="col-md-6 form-group">
+                      <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="col-md-6 form-group mt-3 mt-md-0">
+                      <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
+                        required>
+                    </div>
+                  </div>
+                  <div class="form-group mt-3">
+                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                  </div>
+                  <div class="form-group mt-3">
+                    <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                  </div>
+                  <div class="text-center"><button type="submit">Send Message</button></div>
+                </form>
+
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+        </main>
+        <!-- ======= Footer ======= -->
+        <footer id="footer">
+          <div class="footer-top">
+            <div class="container">
+              <div class="row">
+
+                <div class="col-lg-3 col-md-6">
+                  <div class="footer-info">
+                    <h3>S-Bank</h3>
+                    <p>
+                      Balasore road,Odisha<br>
+                      <br><br>
+                      <strong>Phone:</strong> +1 5589 55488 55<br>
+                      <strong>Email:</strong>S-Bank@gmail.com<br>
+                    </p>
+
+                  </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6 footer-links">
+                  <h4>Useful Links</h4>
+                  <ul>
+                    <li><i class="bx bx-chevron-right"></i> <a href="index.html">Home</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#section--1">Features</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#section--2">operations</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#section--3">Customerss</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#contact">Contacts</a></li>
+                  </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-links">
+                  <h4>Our Services</h4>
+                  <ul>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#">Account Services</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#">Loans and Credit</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#">Online and Mobile Banking</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#">ATM Services</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#">Payment Services</a></li>
+                  </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-6 footer-newsletter">
+                  <h4>Our Newsletter</h4>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita possimus atque fugit non labore
+                    nostrum illum quam quod optio quisquam, nisi consectetur at aperiam culpa rem sapiente amet
+                    accusantium
+                    recusandae.</p>
+                  <form action="" method="post">
+                    <input type="email" name="email"><input type="submit" value="Subscribe">
+                  </form>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="container">
+            <div class="copyright">
+              &copy; Copyright <strong><span>S-Bank</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+              Designed by <a href="#">Satya</a>
+            </div>
+          </div>
+        </footer>
+
+
+        <!-- End Footer -->
+
+
+
+
+
+  </footer>
+
+  <div class="modal hidden">
+    <button class="btn--close-modal">&times;</button>
+    <h2 class="modal__header">
+      <span class="highlight"></span>
+    </h2>
+
+
+
+  </div>
+  <div class="overlay hidden"></div>
+</body>
+
+</html>
+<!-- --------------------------------------------------------------
+SCRIPT SESSION
+
+----------------------------------------------------------- -->
+<script>
+
+  'use strict';
+
+  const modal = document.querySelector('.modal');
+  const overlay = document.querySelector('.overlay');
+  const btnCloseModal = document.querySelector('.btn--close-modal');
+  const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
+  const btnScrollTo = document.querySelector('.btn--scroll-to');
+  const section1 = document.querySelector('#section--1');
+  const nav = document.querySelector('.nav');
+  const tabs = document.querySelectorAll('.operations__tab');
+  const tabsContainer = document.querySelector('.operations__tab-container');
+  const tabsContent = document.querySelectorAll('.operations__content');
+
+  ///////////////////////////////////////
+  // Modal window
+
+  const openModal = function (e) {
+    e.preventDefault();
+    modal.classList.remove('hidden');
+    overlay.classList.remove('hidden');
+  };
+
+  const closeModal = function () {
+    modal.classList.add('hidden');
+    overlay.classList.add('hidden');
+  };
+
+  btnsOpenModal.forEach(btn => btn.addEventListener('click', openModal));
+
+  btnCloseModal.addEventListener('click', closeModal);
+  overlay.addEventListener('click', closeModal);
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+      closeModal();
+    }
+  });
+
+  ///////////////////////////////////////
+  // Button scrolling
+  btnScrollTo.addEventListener('click', function (e) {
+    const s1coords = section1.getBoundingClientRect();
+    console.log(s1coords);
+
+    console.log(e.target.getBoundingClientRect());
+
+    console.log('Current scroll (X/Y)', window.pageXOffset, window.pageYOffset);
+
+    console.log(
+      'height/width viewport',
+      document.documentElement.clientHeight,
+      document.documentElement.clientWidth
+    );
+
+    // Scrolling
+
+
+    section1.scrollIntoView({ behavior: 'smooth' });
+  });
+
+  ///////////////////////////////////////
+  // Page navigation
+
+
+  document.querySelector('.nav__links').addEventListener('click', function (e) {
+    e.preventDefault();
+
+    // Matching strategy
+    if (e.target.classList.contains('nav__link')) {
+      const id = e.target.getAttribute('href');
+      document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+
+  ///////////////////////////////////////
+  // Tabbed component
+
+  tabsContainer.addEventListener('click', function (e) {
+    const clicked = e.target.closest('.operations__tab');
+
+    // Guard clause
+    if (!clicked) return;
+
+    // Remove active classes
+    tabs.forEach(t => t.classList.remove('operations__tab--active'));
+    tabsContent.forEach(c => c.classList.remove('operations__content--active'));
+
+    // Activate tab
+    clicked.classList.add('operations__tab--active');
+
+    // Activate content area
+    document
+      .querySelector(`.operations__content--${clicked.dataset.tab}`)
+      .classList.add('operations__content--active');
+  });
+
+  ///////////////////////////////////////
+  // Menu fade animation
+  const handleHover = function (e) {
+    if (e.target.classList.contains('nav__link')) {
+      const link = e.target;
+      const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+      const logo = link.closest('.nav').querySelector('img');
+
+      siblings.forEach(el => {
+        if (el !== link) el.style.opacity = this;
+      });
+      logo.style.opacity = this;
+    }
+  };
+
+  // Passing "argument" into handler
+  nav.addEventListener('mouseover', handleHover.bind(0.5));
+  nav.addEventListener('mouseout', handleHover.bind(1));
+
+  ///////////////////////////////////////
+  // Sticky navigation: Intersection Observer API
+
+  const header = document.querySelector('.header');
+  const navHeight = nav.getBoundingClientRect().height;
+
+  const stickyNav = function (entries) {
+    const [entry] = entries;
+    // console.log(entry);
+
+    if (!entry.isIntersecting) nav.classList.add('sticky');
+    else nav.classList.remove('sticky');
+  };
+
+  const headerObserver = new IntersectionObserver(stickyNav, {
+    root: null,
+    threshold: 0,
+    rootMargin: `-${navHeight}px`,
+  });
+
+  headerObserver.observe(header);
+
+  ///////////////////////////////////////
+  // Reveal sections
+  const allSections = document.querySelectorAll('.section');
+
+  const revealSection = function (entries, observer) {
+    const [entry] = entries;
+
+    if (!entry.isIntersecting) return;
+
+    entry.target.classList.remove('section--hidden');
+    observer.unobserve(entry.target);
+  };
+
+  const sectionObserver = new IntersectionObserver(revealSection, {
+    root: null,
+    threshold: 0.15,
+  });
+
+  allSections.forEach(function (section) {
+    sectionObserver.observe(section);
+    section.classList.add('section--hidden');
+  });
+
+  // Lazy loading images
+  const imgTargets = document.querySelectorAll('img[data-src]');
+
+  const loadImg = function (entries, observer) {
+    const [entry] = entries;
+
+    if (!entry.isIntersecting) return;
+
+    // Replace src with data-src
+    entry.target.src = entry.target.dataset.src;
+
+    entry.target.addEventListener('load', function () {
+      entry.target.classList.remove('lazy-img');
+    });
+
+    observer.unobserve(entry.target);
+  };
+
+  const imgObserver = new IntersectionObserver(loadImg, {
+    root: null,
+    threshold: 0,
+    rootMargin: '200px',
+  });
+
+  imgTargets.forEach(img => imgObserver.observe(img));
+
+  ///////////////////////////////////////
+  // Slider
+  const slider = function () {
+    const slides = document.querySelectorAll('.slide');
+    const btnLeft = document.querySelector('.slider__btn--left');
+    const btnRight = document.querySelector('.slider__btn--right');
+    const dotContainer = document.querySelector('.dots');
+
+    let curSlide = 0;
+    const maxSlide = slides.length;
+
+    // Functions
+    const createDots = function () {
+      slides.forEach(function (_, i) {
+        dotContainer.insertAdjacentHTML(
+          'beforeend',
+          `<button class="dots__dot" data-slide="${i}"></button>`
+        );
+      });
+    };
+
+    const activateDot = function (slide) {
+      document
+        .querySelectorAll('.dots__dot')
+        .forEach(dot => dot.classList.remove('dots__dot--active'));
+
+      document
+        .querySelector(`.dots__dot[data-slide="${slide}"]`)
+        .classList.add('dots__dot--active');
+    };
+
+    const goToSlide = function (slide) {
+      slides.forEach(
+        (s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`)
+      );
+    };
+
+    // Next slide
+    const nextSlide = function () {
+      if (curSlide === maxSlide - 1) {
+        curSlide = 0;
+      } else {
+        curSlide++;
+      }
+
+      goToSlide(curSlide);
+      activateDot(curSlide);
+    };
+
+    const prevSlide = function () {
+      if (curSlide === 0) {
+        curSlide = maxSlide - 1;
+      } else {
+        curSlide--;
+      }
+      goToSlide(curSlide);
+      activateDot(curSlide);
+    };
+
+    const init = function () {
+      goToSlide(0);
+      createDots();
+
+      activateDot(0);
+    };
+    init();
+
+    // Event handlers
+    btnRight.addEventListener('click', nextSlide);
+    btnLeft.addEventListener('click', prevSlide);
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') prevSlide();
+      e.key === 'ArrowRight' && nextSlide();
+    });
+
+    dotContainer.addEventListener('click', function (e) {
+      if (e.target.classList.contains('dots__dot')) {
+        const { slide } = e.target.dataset;
+        goToSlide(slide);
+        activateDot(slide);
+      }
+    });
+  };
+  slider();
+
+
+</script>

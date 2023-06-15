@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="image/customer.png" type="image/png" sizes="16x16">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S-Bank Transitions</title>
+  <meta name="title" content="S-Bank_Associated with Sparks foundations.">
+  <meta name="description" content="This is a Banking Website website made by satya">
+  <link rel="shortcut icon" href="hero-img.svg">
+  <link rel="stylesheet"
+    href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+</head>
+<style>
+  body {
+    font-family: "Titillium Web", Arial, sans-serif;
+    background-color: #756b6b;
+    text-decoration: none;
+  }
+
+  .bg-light {
+    background-color: #13161F !important;
+    padding-bottom: 10px;
+  }
+
+
+  /* navbar css ends here  */
+
+  .my-info {
+    padding: 2rem 5rem;
+    color: #ffffff;
+  }
+
+  .btn-info {
+    padding: 0.5rem 2rem;
+    font-size: 140%;
+    background: #7f94f4 !important;
+    color: black !important;
+    transition: 0.3s;
+    border-radius: 5px;
+  }
+
+  .btn-info:hover {
+    text-decoration: none;
+    color: black !important;
+  }
+
+  /*scrollbar starts here*/
+  ::-webkit-scrollbar {
+    width: 5px;
+    background-color: black;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 800px;
+    background-color: #511af7;
+  }
+
+  /*scrollbar ends here*/
+
+
+  /* footer css starts here */
+  .foot {
+    margin-top: 20px;
+    padding: 25px 0;
+    background-color: #13161F;
+  }
+
+  .container {
+    max-width: 1230px;
+    padding: 0 30px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .bottom {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    display: flex;
+    align-items: center;
+  }
+
+  .text {
+    text-align: right;
+    color: #ffffff;
+  }
+
+  .title {
+    font-size: 100%;
+    color: #ffffff;
+    text-align: left;
+    float: left;
+  }
+
+  .goto-btn {
+    margin-top: -5px;
+    width: 90px;
+    height: 35px;
+    margin-left: 10px;
+    padding: 7px 10px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+    cursor: pointer;
+    float: left;
+    background: #f7511a;
+    color: black !important;
+    text-decoration: none !important;
+
+  }
+
+  /* footer css ends here  */
+
+  /*Table starts here*/
+
+  table {
+    border-spacing: 1;
+    border-collapse: collapse;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .table-info,
+  .table-info td,
+  .table-info th,
+  .table-info tr {
+    background-color: #777476 !important;
+  }
+
+  .table-light,
+  .table-light td,
+  .table-light th,
+  .table-info tr {
+    background-color: white !important;
+  }
+
+  table * {
+    position: relative;
+  }
+
+  table td,
+  table th {
+    padding-left: 8px;
+  }
+
+  table thead tr {
+    height: 60px;
+    background: #F7931A;
+  }
+
+  table tbody tr {
+    height: 50px;
+  }
+
+  table tbody tr:last-child {
+    border: 0;
+  }
+
+  table td,
+  table th {
+    text-align: left;
+  }
+
+  table td.l,
+  table th.l {
+    text-align: right;
+  }
+
+  table td.c,
+  table th.c {
+    text-align: center;
+  }
+
+  table td.r,
+  table th.r {
+    text-align: center;
+  }
+
+  tbody tr {
+    font-size: 18px;
+    color: black;
+    line-height: 1.2;
+    font-weight: 500;
+  }
+
+  tbody tr:hover {
+    cursor: pointer;
+  }
+
+  .column1 {
+    width: 260px;
+    padding-left: 40px;
+  }
+
+  .column2 {
+    width: 160px;
+  }
+
+  .column3 {
+    width: 245px;
+  }
+
+  .column4 {
+    width: 110px;
+    text-align: right;
+  }
+
+  .table-danger th {
+    background-color: #13161F !important;
+    font-family: 'Noto Sans JP', sans-serif !important;
+    font-size: 18px !important;
+    color: white !important;
+    font-weight: unset;
+  }
+
+  .table-danger th:hover {
+    color: #F7931A !important;
+  }
+
+  .table-danger {
+    background-color: #13161F !important;
+  }
+
+  @media screen and (max-width: 992px) {
+    table {
+      display: block;
+    }
+
+    table>*,
+    table tr,
+    table td,
+    table th {
+      display: block;
+    }
+
+    table thead {
+      display: none;
+    }
+
+    table tbody tr {
+      height: auto;
+      padding: 37px 0;
+    }
+
+    table tbody tr td {
+      padding-left: 40% !important;
+      margin-bottom: 24px;
+    }
+
+    table tbody tr td:last-child {
+      margin-bottom: 0;
+    }
+
+    table tbody tr td:before {
+      font-size: 14px;
+      color: #999999;
+      line-height: 1.2;
+      font-weight: unset;
+      position: absolute;
+      width: 40%;
+      left: 30px;
+      top: 0;
+    }
+
+    table tbody tr td:nth-child(1):before {
+      content: "Serial No";
+    }
+
+    table tbody tr td:nth-child(2):before {
+      content: "Name";
+    }
+
+    table tbody tr td:nth-child(3):before {
+      content: "Email";
+    }
+
+    table tbody tr td:nth-child(4):before {
+      content: "Balance";
+    }
+
+    .column4 {
+      text-align: left;
+    }
+
+    .column4,
+    .column1,
+    .column2,
+    .column3 {
+      width: 100%;
+    }
+
+    tbody tr {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .container-table100 {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+
+  /* Table ends here*/
+</style>
+
+<body>
+
+
+  <div class="my-info text-center">
+    <h2>S-Bank</h2>
+    <h4>My A/C Balance: <span id="myAccountBalance">₹50000000</span> </h4>
+
+    <button class="btn btn-info" data-toggle="modal" data-target="#sendMoney">Send Money</button>
+    <a class="btn btn-info" href="" data-toggle="modal" data-target="#transactionHistory">See All Transactions</a>
+  </div>
+
+  <!-- Modal send money -->
+  <div class="modal fade" id="sendMoney" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Send Money </h5>
+
+
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Name: &nbsp; </span>
+              </div>
+              <input type="text" id="enterName" class="form-control"
+                placeholder=" Enter Recipient's Name (Case Sensitive)" aria-label="Recipient's Name"
+                aria-describedby="basic-addon2">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">₹: &nbsp; </span>
+              </div>
+              <input type="text" id="enterAmount" class="form-control" placeholder=" Enter Amount"
+                aria-label=" Enter Amount">
+            </div>
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" onclick="sendMoney()" class="btn btn-success" data-dismiss="modal">Send
+            Money</button>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal transaction History-->
+  <div class="modal fade" id="transactionHistory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Transaction History</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <ol id="transaction-history-body">
+
+          </ol>
+        </div>
+        <div class="modal-footer">
+          <a href="successpage.html" class="modal-title">receipt</a>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- table  -->
+  <div class="container">
+    <div class="table-responsive">
+      <table class="table table-hover table-bordered">
+        <thead>
+          <tr class="table-danger">
+            <th scope="column1">Serial No</th>
+            <th scope="column2">Name</th>
+            <th scope="column3">Mail Address</th>
+            <th scope="column4">(₹) Balance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table-light">
+            <td scope="row">1</td>
+            <td>satya</td>
+            <td>satya@gmail.com</td>
+            <td>
+              <p id="satyaMoney">645000</p>
+            </td>
+          </tr>
+          <tr class="table-info">
+            <td scope="row">2</td>
+            <td>sonali</td>
+            <td>sonali@gmail.com</td>
+            <td>
+              <p id="sonaliMoney">775000</p>
+            </td>
+          </tr>
+          <tr class="table-light">
+            <td scope="row">3</td>
+            <td>akshaya</td>
+            <td>akshaya@gmail.com</td>
+            <td>
+              <p id="akshayaMoney">998000</p>
+            </td>
+          </tr>
+          <tr class="table-info">
+            <td scope="row">4</td>
+            <td>tejaswini</td>
+            <td>tejaswini@gmail.com</td>
+            <td>
+              <p id="tejaswiniMoney">909000</p>
+            </td>
+          </tr>
+          <tr class="table-light">
+            <td scope="row">5</td>
+            <td>subha</td>
+            <td>subha@mail.com</td>
+            <td>
+              <p id="subhaMoney">800000</p>
+            </td>
+          </tr>
+          <tr class="table-info">
+            <td scope="row">6</td>
+            <td>vishal</td>
+            <td>vishal@gmail.com</td>
+            <td>
+              <p id="vishalMoney">500000</p>
+            </td>
+          </tr>
+          <tr class="table-light">
+            <td>7</td>
+            <td>dheeraj</td>
+            <td>dheeraj@mail.com</td>
+            <td>
+              <p id="dheerajMoney">560000</p>
+            </td>
+          </tr>
+          <tr class="table-info">
+            <td>8</td>
+            <td>manisha</td>
+            <td>manisha@mail.com</td>
+            <td>
+              <p id="manishaMoney">750000</p>
+            </td>
+          </tr>
+          <tr class="table-light">
+            <td>9</td>
+            <td>ananta</td>
+            <td>ananta@mail.com</td>
+            <td>
+              <p id="anantasMoney">950000</p>
+            </td>
+          </tr>
+          <tr class="table-info">
+            <td>10</td>
+            <td>tulasi</td>
+            <td>tulasi@mail.com</td>
+            <td>
+              <p id="tulasiMoney">880000</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!--Footer starts here-->
+  <div class="foot">
+    <div class="container">
+      <div class="text">
+        <span class="title">Go to Home Page:</span>
+        <a class="goto-btn" href="index.html" onclick="goto()"><b>Home</b></a>
+        This Bank Project By -@<a href="#" target="_blank">satya</a>
+      </div>
+    </div>
+  </div>
+  <!--Footer ends here-->
+</body>
+
+</html>
+
+<script>
+  let myAccountBalance = parseInt(document.getElementById("myAccountBalance").innerText);
+
+  function sendMoney() {
+    var enterName = document.getElementById("enterName").value;
+    var enterAmount = parseInt(document.getElementById("enterAmount").value);
+
+    if (enterAmount > 500000) {
+      alert("Insufficient Balance.")
+    } else {
+      var findUserBankAccount = enterName + "Money";
+      var finalAmount = parseInt(document.getElementById(findUserBankAccount).innerHTML) + enterAmount;
+      var myAccountBalance = parseInt(document.getElementById("myAccountBalance").innerText) - enterAmount
+      document.getElementById("myAccountBalance").innerText = myAccountBalance
+      document.getElementById(findUserBankAccount).innerHTML = finalAmount;
+      alert(`Transaction Successful !!  
+      ${enterAmount} ₹ sent to ${enterName}`)
+
+      // transaction history 
+      var createPTag = document.createElement("li");
+      var textNode = document.createTextNode(`${enterAmount} ₹ Transferred Successfully to ${enterName} on ${Date()}.`);
+      createPTag.appendChild(textNode);
+      var element = document.getElementById("transaction-history-body");
+      element.insertBefore(createPTag, element.firstChild);
+    }
+  }
+
+  function goto() {
+    var person = alert("Are you sure you want to leave?");
+  }
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"></script>
+<script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"></script>
